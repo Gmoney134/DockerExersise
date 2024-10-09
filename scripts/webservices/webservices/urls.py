@@ -28,6 +28,7 @@ from rest_framework_simplejwt.views import (
 )
 from dogapp.views import DogDetailAPIView
 from dogapi.views import DogListCreateView, DogRetrieveUpdateDestroyView, BreedListCreateView, BreedRetrieveUpdateDestroyView
+from dogapi.controllers import DogList, DogDetail
 
 
 
@@ -45,4 +46,6 @@ urlpatterns = [
     path('dogs/<int:pk>/', DogRetrieveUpdateDestroyView.as_view(), name='dog-detail'),
     path('breeds/', BreedListCreateView.as_view(), name='breed-list-create'),
     path('breeds/<int:pk>/', BreedRetrieveUpdateDestroyView.as_view(), name='breed-detail'),
+    path('dogs/', DogList.as_view(), name='dog-list'),
+    path('dogs/<int:pk>/', DogDetail.as_view(), name='dog-detail'),
 ]
