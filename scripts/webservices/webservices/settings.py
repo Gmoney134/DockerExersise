@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'graphene_django',
     'graphql_jwt',
+    'dogapi',
 ]
 
 MIDDLEWARE = [

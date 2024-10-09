@@ -27,6 +27,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from dogapp.views import DogDetailAPIView
+from dogapi.views import DogListCreateView, DogRetrieveUpdateDestroyView, BreedListCreateView, BreedRetrieveUpdateDestroyView
+
 
 
 urlpatterns = [
@@ -39,4 +41,8 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('rest/dog/<int:pk>/', DogDetailAPIView.as_view(), name='rest_get_dog'),
+    path('dogs/', DogListCreateView.as_view(), name='dog-list-create'),
+    path('dogs/<int:pk>/', DogRetrieveUpdateDestroyView.as_view(), name='dog-detail'),
+    path('breeds/', BreedListCreateView.as_view(), name='breed-list-create'),
+    path('breeds/<int:pk>/', BreedRetrieveUpdateDestroyView.as_view(), name='breed-detail'),
 ]
