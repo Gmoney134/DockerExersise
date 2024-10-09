@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    build: .
+    volumes:
+      - /Users/gmoney/Documents/DockerLabs/scripts:/web_services
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+
+volumes:
+  scripts:
