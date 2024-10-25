@@ -10,5 +10,9 @@ RUN pip install graphene-django
 RUN pip install djangorestframework
 RUN pip install djangorestframework-simplejwt
 RUN pip install django-graphql-jwt
+RUN pip install psycopg2-binary
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
+EXPOSE 8000
 WORKDIR /webservices/webservices
